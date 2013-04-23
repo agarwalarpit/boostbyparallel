@@ -1,0 +1,3 @@
+C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/clTut.dir
