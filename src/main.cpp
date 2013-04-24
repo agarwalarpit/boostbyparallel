@@ -11,6 +11,7 @@ int main ()
 	CLLibrary *cll_object = new CLLibrary(); 
 	cll_object->createContext(cll_object->platformIds[0]); 
 	std::cout << "Context created" << std::endl;
+	
 	const char* filename = "C:/Users/TEEVE/Desktop/OpenCLTut/kernels/vecAdd.cl";
 	cll_object->program = cll_object->buildProgram(filename); 
 	cll_object->createKernel("vecAdd"); 
