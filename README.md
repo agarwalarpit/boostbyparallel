@@ -11,7 +11,7 @@ The framework is undergoing development, is in the pre-alpha phase, and is avail
 
 Author: ASquared.  
 
-<h1> How to run:  </h1> 
+<h1> How to run  </h1> 
 The framework was started using the Visual Studio IDE, hence the build directory. Additional support and information will be provided soon, on how to run and setup the framework on any computer with the required hardware support. For those who are running Visual Studio 10, on a 64 bit machine, they can do the following steps: 
 
 		1. Clone the boostbyparallel directory on to the destination folder on your local machine. 
