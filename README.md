@@ -18,7 +18,7 @@ The framework was started using the Visual Studio IDE, hence the build directory
 		2. Run the clTut.sln file. This will open up visual studio. 
 		3. Click on debug, or press F5 to run the code. 
 
-Kernels for the parallelization software are provided in the folder named, *kernel*. 
+Kernels for the parallelization software are provided in the folder named, *./kernels*. 
 
  
  
