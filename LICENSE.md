@@ -1,9 +1,10 @@
 Copyright (c) 2013 Arpit Agarwal 
 All rights reserved.
 
-Developed by: 			MONET Research Group	
-                     	University of Illinois at Urbana-Champaign 
+Developed by: 		**MONET Research Group**
+                     	**University of Illinois at Urbana-Champaign**
                       	[MONET](http://cairo.cs.uiuc.edu/) 
+                                           
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimers.
