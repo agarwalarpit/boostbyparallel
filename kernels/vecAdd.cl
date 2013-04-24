@@ -1,3 +1,8 @@
+
+int operator(int a, int b) {
+	return (a + b); 
+}     
+
 __kernel 
 void vecAdd(  __global double *a, __global double *b, __global double *c, const unsigned int n)                    
 {                                                               
@@ -6,6 +11,6 @@ void vecAdd(  __global double *a, __global double *b, __global double *c, const 
 
     //Make sure we do not go out of bounds
     if (id < n) {
-		c[id] = a[id] + b[id];
+		c[id] = operator(a[id], b[id]);
 	}                                
-}      
+} 
