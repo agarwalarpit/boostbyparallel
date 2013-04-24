@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <math.h> 
 
 #ifdef __APPLE__
         #include "OpenCL/opencl.h"
@@ -13,7 +14,7 @@
         #include "CL/cl.h"
 #endif
 
-typedef enum BOOL {False, True}; 
+typedef enum {False, True} BOOL; 
 
 struct Image
 {
