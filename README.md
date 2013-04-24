@@ -19,7 +19,7 @@ The framework was started using the Visual Studio IDE, hence the build directory
 		3. Don't forget to change the filepath for the vecAdd.cl file, in src/main.cpp 
 		3. Click on debug, or press F5 to run the code. 
 
-Kernels for the parallelization software are provided in the folder named, *kernel*. 
+Kernels for the parallelization software are provided in the folder named, *./kernels*. 
 
  
  
