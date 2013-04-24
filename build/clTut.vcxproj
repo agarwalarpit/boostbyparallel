@@ -321,28 +321,24 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cllibrary.cpp" />
-    <ClCompile Include="..\gpu_info.cpp" />
-    <ClCompile Include="..\image_manipulation.cpp" />
-    <ClCompile Include="..\main.cpp" />
-    <ClCompile Include="..\opencl_check.cpp" />
-    <ClCompile Include="..\vecOp.cpp" />
-    <ClCompile Include="..\vecOp.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="C:/Users/TEEVE/Desktop/OpenCLTut/build/ZERO_CHECK.vcxproj">
       <Project>C33F7C67-D4D1-4D17-BA71-359473EC043E</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\kernels\image.cl" />
-    <None Include="..\vecAdd.cl" />
+    <ClCompile Include="..\src\cllibrary.cpp" />
+    <ClCompile Include="..\src\gpu_info.cpp" />
+    <ClCompile Include="..\src\image_manipulation.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\opencl_check.cpp" />
+    <ClCompile Include="..\src\vecOp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\cllibrary.h" />
-    <ClInclude Include="..\gpu_info.h" />
-    <ClInclude Include="..\header.h" />
-    <ClInclude Include="..\image_manipulation.h" />
+    <ClInclude Include="..\src\cllibrary.h" />
+    <ClInclude Include="..\src\gpu_info.h" />
+    <ClInclude Include="..\src\header.h" />
+    <ClInclude Include="..\src\image_manipulation.h" />
+    <ClInclude Include="..\src\vecOp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
