@@ -1,2 +1,0 @@
-/usr/bin/ar cr libvecOp.a  CMakeFiles/vecOp.dir/vecOp.cpp.o
-/usr/bin/ranlib libvecOp.a

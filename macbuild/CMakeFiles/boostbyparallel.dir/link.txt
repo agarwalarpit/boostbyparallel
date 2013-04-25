@@ -1,1 +1,0 @@
-/usr/bin/c++   -g -Wall -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/boostbyparallel.dir/maincontroller.cpp.o  -o boostbyparallel  -framework OpenCL -lM libcllibrary.a libgpu_info.a libvecOp.a 
