@@ -1,11 +1,40 @@
 #include "cllibrary.h"
 
-#define QUEUE_ON_GPU 1
-#define QUEUE_ON_CPU 0
+CLLibrary::CLLibrary() {
+	error = CL_SUCCESS;
+	platformIdCount = 0;
+	deviceIdCount = 0;	
+	error = clGetPlatformIDs(0, NULL, &platformIdCount);
+	CheckError(error, "clGetPlatformIDs: No opencl platforms found"); 
+	error = clGetDeviceIDs(NULL, CL_DEVICE_TYPE_GPU, 0, NULL, &deviceIdCount); 
+	CheckError(error, "clGetDeviceIDs: No OpenCL compatible devices found"); 	
+
+	std::vector<cl_platform_id> tempPlatformIds (platformIdCount);
+	std::vector<cl_device_id> tempDeviceIds (deviceIdCount);
+	platformIds = tempPlatformIds; 
+	deviceIds = tempDeviceIds; 
+	
+	clGetPlatformIDs(platformIdCount, platformIds.data (), NULL);
+	clGetDeviceIDs(platformIds[0], CL_DEVICE_TYPE_GPU, deviceIdCount, deviceIds.data(), NULL); 	
+	print_platform_info(platformIds); 
+	print_device_info(deviceIds); 
+}
+
+void CLLibrary::createContext(cl_platform_id platform_id) {
+	const cl_context_properties contextProperties [] = {
+		CL_CONTEXT_PLATFORM, 
+		reinterpret_cast<cl_context_properties> (platform_id),
+		0, 
+		0
+    };
+		
+    context = clCreateContext(contextProperties, deviceIdCount, deviceIds.data (), NULL, NULL, &error);
+    CheckError(error, "clCreateContext: Failed to create compute context");
+}
 
 void CLLibrary::createQueue() {
 	queue = clCreateCommandQueue(context, deviceIds[0], 0, &error);
-	CheckError(error);
+	CheckError(error, "clCreateCommandQueue: Failed to create a command's queue");
 }
 
 void CLLibrary::createKernel(const char* name) {
@@ -30,35 +59,34 @@ void CLLibrary::createProgram (const std::string& source, cl_context context)
 
         cl_int error = 0;
         program = clCreateProgramWithSource (context, 1, sources, lengths, &error);
-        CheckError (error);
+        CheckError (error, "clCreateProgramWithSource: Failed to create compute program");
 }
 
 cl_program CLLibrary::buildProgram(const char* name) {
 	createProgram(loadKernel(name), context); 
 	/** TODO: The fourth argument is some random value filled in just now. Have to understand the importance of the argument later **/
-	string flags_string = "-D FILTER_SIZE=1"; 
-	clBuildProgram(program, deviceIdCount, deviceIds.data(), flags_string.c_str(), NULL, NULL);
+	string flags_string = "-D FILTER_SIZE=1";
+//   	error = clBuildProgram(program, 0, NULL, NULL, NULL, NULL); 
+	error = clBuildProgram(program, deviceIdCount, deviceIds.data(), flags_string.c_str(), NULL, NULL);
+	if (error != CL_SUCCESS) {
+		size_t len; 
+		char buffer[2048];
+		clGetProgramBuildInfo(program, deviceIds[0], CL_PROGRAM_BUILD_LOG, sizeof(buffer), buffer, &len); 
+		cout << buffer << endl; 
+		exit(1); 
+	}
+
+	CheckError(error, "clBuildProgram: Failed to build program executable"); 
 	return program; 
 }
 
-void CLLibrary::createContext(cl_platform_id platform_id) {
-
-	// http://www.khronos.org/registry/cl/sdk/1.1/docs/man/xhtml/clCreateContext.html
-	const cl_context_properties contextProperties [] = {
-		CL_CONTEXT_PLATFORM, reinterpret_cast<cl_context_properties> (platform_id),
-            0, 0
-    };
-		
-	error = CL_SUCCESS;
-    context = clCreateContext (contextProperties, deviceIdCount, deviceIds.data (), NULL, NULL, &error);
-    CheckError (error);
-    std::cout << "Context created" << std::endl;
-}
 
 void CLLibrary::CheckError(cl_int in_error, std::string err_message) {
 	if (in_error != CL_SUCCESS) {
 		cerr << err_message << ": " << in_error << endl;
 	   	exit(1); 
+	} else {
+		cout << "No error such as: " << err_message << endl; 
 	}
 }
 
@@ -105,21 +133,3 @@ CLLibrary::~CLLibrary() {
 //	delete context; 
 }
 
-CLLibrary::CLLibrary() {
-	platformIdCount = 0;
-	deviceIdCount = 0;	
-	error = clGetPlatformIDs(0, NULL, &platformIdCount);
-	CheckError(error, "clGetPlatformIDs:No opencl platforms found"); 
-	error = clGetDeviceIDs(NULL, CL_DEVICE_TYPE_CPU, 0, NULL, &deviceIdCount); 
-	CheckError(error, "clGetDeviceIDs: No OpenCL compatible devices found"); 	
-
-	std::vector<cl_platform_id> tempPlatformIds (platformIdCount);
-	std::vector<cl_device_id> tempDeviceIds (deviceIdCount);
-	platformIds = tempPlatformIds; 
-	deviceIds = tempDeviceIds; 
-	
-	clGetPlatformIDs(platformIdCount, platformIds.data (), NULL);
-	clGetDeviceIDs(platformIds[0], CL_DEVICE_TYPE_CPU, deviceIdCount, deviceIds.data(), NULL); 	
-	print_platform_info(platformIds); 
-	print_device_info(deviceIds); 
-}

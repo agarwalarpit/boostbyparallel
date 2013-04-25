@@ -11,6 +11,7 @@ int main ()
 	CLLibrary *cll_object = new CLLibrary(); 
 	cll_object->createContext(cll_object->platformIds[0]); 
 	std::cout << "Context created" << std::endl;
+	cll_object->createQueue();
 	
 	const char* filename = "../kernels/vecAdd.cl";
 	cll_object->program = cll_object->buildProgram(filename); 
@@ -22,19 +23,19 @@ int main ()
     // Number of work items in each local work group
     localSize = 64;
  
-	double *h_a; 
-	double *h_b; 
-	double *h_c; 
+	int *h_a; 
+	int *h_b; 
+	int *h_c; 
 
 	int n = 2; 
-	size_t bytes = n * sizeof(double); 
+	size_t bytes = n * sizeof(int); 
 
 /** This initialization of input vectors h_a, h_b is not required in the real applications. 
 It would be done by the calling function. However, h_c has to be initliazed in this function. 
 **/ 
-	h_a = (double *) malloc(bytes); 
-	h_b = (double *) malloc(bytes); 
-	h_c = (double *) malloc(bytes); 
+	h_a = (int *) malloc(bytes); 
+	h_b = (int *) malloc(bytes); 
+	h_c = (int *) malloc(bytes); 
     
 	for(int i=0; i<n; i++) {
 		h_a[i] = i; 
@@ -42,7 +43,6 @@ It would be done by the calling function. However, h_c has to be initliazed in t
 		h_c[i] = 0;
 	}
 
-	cll_object->createQueue();
 
 /** Operation object handler's definition. This function is the handler function, all the different 
 kinds of inputs, various matrices, and the dimensions, would be input on this function. The decision 
@@ -81,7 +81,7 @@ would be taken hereafter, and the results would be returned from this function.
 	cout << std::endl; 
 
     for(int i=0; i<n; i++) {
-		printf("matrix c element %d: %g\n", i, h_c[i]); 
+		printf("matrix c element %d: %d\n", i, h_c[i]); 
         sum += h_c[i];
 	}
     printf("final result: %f\n", sum/(double)n);

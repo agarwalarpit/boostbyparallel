@@ -16,3 +16,6 @@
 build/
 macbuild/
 testbuild/
+
+# Swap files because of vim
+*.swp
