@@ -27,7 +27,7 @@ int main ()
 	int *h_b; 
 	int *h_c; 
 
-	int n = 2; 
+	int n = 10; 
 	size_t bytes = n * sizeof(int); 
 
 /** This initialization of input vectors h_a, h_b is not required in the real applications. 
