@@ -1,4 +1,0 @@
-/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/boostbyparallel.dir
-/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/cllibrary.dir
-/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/gpu_info.dir
-/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/vecOp.dir
