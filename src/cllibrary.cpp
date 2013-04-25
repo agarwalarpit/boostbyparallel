@@ -20,6 +20,14 @@ CLLibrary::CLLibrary() {
 	print_device_info(deviceIds); 
 }
 
+CLLibrary::~CLLibrary() {
+	//Delete all the vectors and dynamically allocated variables.
+//	delete program; 
+//	delete kernel; 
+//	delete queue; 
+//	delete context; 
+}
+
 void CLLibrary::createContext(cl_platform_id platform_id) {
 	const cl_context_properties contextProperties [] = {
 		CL_CONTEXT_PLATFORM, 
@@ -123,13 +131,5 @@ void CLLibrary::CheckError (cl_int in_error)
 			std::exit(1); 
 		}
 	}
-}
-
-CLLibrary::~CLLibrary() {
-	//Delete all the vectors and dynamically allocated variables.
-//	delete program; 
-//	delete kernel; 
-//	delete queue; 
-//	delete context; 
 }
 

@@ -81,7 +81,7 @@ would be taken hereafter, and the results would be returned from this function.
 	cout << std::endl; 
 
     for(int i=0; i<n; i++) {
-		printf("matrix c element %d: %d\n", i, h_c[i]); 
+		cout << "Matrix c element @ " << i << " is: " << h_c[i] << endl; 
         sum += h_c[i];
 	}
     printf("final result: %f\n", sum/(double)n);
