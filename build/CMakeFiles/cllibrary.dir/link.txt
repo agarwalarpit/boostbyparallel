@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcllibrary.a  CMakeFiles/cllibrary.dir/cllibrary.cpp.o
+/usr/bin/ranlib libcllibrary.a

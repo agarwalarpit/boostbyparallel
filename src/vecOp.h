@@ -1,4 +1,4 @@
-#include "header.h" 
+#include "maincontroller.h"
 #include "gpu_info.h"
 
 #ifndef _VECOP_

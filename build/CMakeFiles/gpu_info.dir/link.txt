@@ -1,0 +1,2 @@
+/usr/bin/ar cr libgpu_info.a  CMakeFiles/gpu_info.dir/gpu_info.cpp.o
+/usr/bin/ranlib libgpu_info.a

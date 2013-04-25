@@ -1,5 +1,5 @@
 
-#include "header.h"
+#include "maincontroller.h"
 
 #ifndef _IMAGE_MANIPULATION_
 #define _IMAGE_MANIPULATION_

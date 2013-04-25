@@ -1,1 +1,4 @@
 /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/boostbyparallel.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/cllibrary.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/gpu_info.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/vecOp.dir

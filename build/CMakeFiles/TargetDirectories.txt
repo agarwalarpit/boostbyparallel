@@ -1,3 +1,4 @@
-C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/TEEVE/Desktop/OpenCLTut/build/CMakeFiles/clTut.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/boostbyparallel.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/cllibrary.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/gpu_info.dir
+/Users/arpitagarwal/Desktop/boostbyparallel/build/CMakeFiles/vecOp.dir

@@ -1,4 +1,4 @@
-#include "header.h" 
+#include "maincontroller.h"
 #include "gpu_info.h" 
 
 #ifndef _CLLIBRARY_
@@ -22,7 +22,8 @@ public:
 	~CLLibrary(); 
 	void createContext(cl_platform_id platform_id); 
 	void CheckError (cl_int error); 
-	std::string loadKernel (const char* name);
+	void CheckError (cl_int error, string err_message);
+  	std::string loadKernel (const char* name);
 	void createProgram (const std::string& source, cl_context context);
 	cl_program buildProgram(const char* name); 
 	void createKernel(const char* name); 

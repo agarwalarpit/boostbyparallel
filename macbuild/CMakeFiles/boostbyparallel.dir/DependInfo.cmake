@@ -4,17 +4,21 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/arpitagarwal/Desktop/boostbyparallel/src/main.cpp" "/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/boostbyparallel.dir/main.cpp.o"
+  "/Users/arpitagarwal/Desktop/boostbyparallel/src/maincontroller.cpp" "/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/boostbyparallel.dir/maincontroller.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/cllibrary.dir/DependInfo.cmake"
+  "/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/gpu_info.dir/DependInfo.cmake"
+  "/Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles/vecOp.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/System/Library/Frameworks/OpenCL.framework"
+  "/Users/arpitagarwal/Desktop/boostbyparallel/src"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

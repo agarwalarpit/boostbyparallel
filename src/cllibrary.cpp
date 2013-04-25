@@ -1,7 +1,11 @@
 #include "cllibrary.h"
 
+#define QUEUE_ON_GPU 1
+#define QUEUE_ON_CPU 0
+
 void CLLibrary::createQueue() {
 	queue = clCreateCommandQueue(context, deviceIds[0], 0, &error);
+	CheckError(error);
 }
 
 void CLLibrary::createKernel(const char* name) {
@@ -32,7 +36,8 @@ void CLLibrary::createProgram (const std::string& source, cl_context context)
 cl_program CLLibrary::buildProgram(const char* name) {
 	createProgram(loadKernel(name), context); 
 	/** TODO: The fourth argument is some random value filled in just now. Have to understand the importance of the argument later **/
-	clBuildProgram(program, deviceIdCount, deviceIds.data(), "-D FILTER_SIZE=1", nullptr, nullptr);
+	string flags_string = "-D FILTER_SIZE=1"; 
+	clBuildProgram(program, deviceIdCount, deviceIds.data(), flags_string.c_str(), NULL, NULL);
 	return program; 
 }
 
@@ -45,61 +50,76 @@ void CLLibrary::createContext(cl_platform_id platform_id) {
     };
 		
 	error = CL_SUCCESS;
-    context = clCreateContext (contextProperties, deviceIdCount, deviceIds.data (), nullptr, nullptr, &error);
+    context = clCreateContext (contextProperties, deviceIdCount, deviceIds.data (), NULL, NULL, &error);
     CheckError (error);
     std::cout << "Context created" << std::endl;
 }
 
+void CLLibrary::CheckError(cl_int in_error, std::string err_message) {
+	if (in_error != CL_SUCCESS) {
+		cerr << err_message << ": " << in_error << endl;
+	   	exit(1); 
+	}
+}
+
 void CLLibrary::CheckError (cl_int in_error)
 {
-		if (in_error != CL_SUCCESS) {
-				std::cerr << "OpenCL call failed with error " << error << std::endl;
-				status = BOOL::False; 
-				std::exit (1);
-		} 
+	if (in_error == CL_SUCCESS) {
+		return;  
+	}
+
+	switch(in_error) {
+		case CL_INVALID_PLATFORM:
+		{
+			std::cerr << "Invalid platform. Error: " << error << std::endl; 
+			std::exit(1); 
+		}
+		case CL_INVALID_DEVICE_TYPE:
+		{
+			std::cerr << "Invalide device type found. Error: " << error << std::endl; 
+			std::exit(1); 
+		}
+		case CL_INVALID_VALUE:
+		{
+			std::cerr << "Invalide value obtained. Error: " << error << std::endl; 
+			std::exit(1); 
+		}
+		case CL_DEVICE_NOT_FOUND:
+		{
+			std::cerr << "Device not found for OpenCL. Error: " << error << std::endl; 
+			std::exit(1); 
+		}
+		default:
+		{
+			std::cerr << "Some error: " << error << std::endl; 
+			std::exit(1); 
+		}
+	}
 }
 
 CLLibrary::~CLLibrary() {
 	//Delete all the vectors and dynamically allocated variables.
-	delete program; 
-	delete kernel; 
-	delete queue; 
-	delete context; 
+//	delete program; 
+//	delete kernel; 
+//	delete queue; 
+//	delete context; 
 }
 
 CLLibrary::CLLibrary() {
 	platformIdCount = 0;
-	clGetPlatformIDs(0, nullptr, &platformIdCount);
-	if (platformIdCount == 0) {
-            std::cerr << "No OpenCL platform found" << std::endl;
-            status = BOOL::False;
-    } else {
-            std::cout << "Found " << platformIdCount << " platform(s)" << std::endl;
-    }
+	deviceIdCount = 0;	
+	error = clGetPlatformIDs(0, NULL, &platformIdCount);
+	CheckError(error, "clGetPlatformIDs:No opencl platforms found"); 
+	error = clGetDeviceIDs(NULL, CL_DEVICE_TYPE_CPU, 0, NULL, &deviceIdCount); 
+	CheckError(error, "clGetDeviceIDs: No OpenCL compatible devices found"); 	
 
 	std::vector<cl_platform_id> tempPlatformIds (platformIdCount);
-	platformIds = tempPlatformIds; 
-	clGetPlatformIDs (platformIdCount, platformIds.data (), nullptr);
-	for (cl_uint i = 0; i < platformIdCount; ++i) {
-            std::cout << "\t (" << (i+1) << ") : " << GetPlatformName (platformIds [i]) << std::endl;
-    }
-
-	deviceIdCount = 0;
-	clGetDeviceIDs (platformIds [0], CL_DEVICE_TYPE_CPU, 0, nullptr,
-            &deviceIdCount);
-	if (deviceIdCount == 0) {
-            std::cerr << "No OpenCL devices found" << std::endl;
-            status = BOOL::False;
-    } else {
-            std::cout << "Found " << deviceIdCount << " device(s)" << std::endl;
-    }
-
 	std::vector<cl_device_id> tempDeviceIds (deviceIdCount);
+	platformIds = tempPlatformIds; 
 	deviceIds = tempDeviceIds; 
-	clGetDeviceIDs (platformIds [0], CL_DEVICE_TYPE_ALL, deviceIdCount,
-                deviceIds.data (), nullptr);
-
-	for (cl_uint i = 0; i < deviceIdCount; ++i) {
-            std::cout << "\t (" << (i+1) << ") : " << GetDeviceName (deviceIds [i]) << std::endl;
-    }
+	
+	clGetPlatformIDs(platformIdCount, platformIds.data (), NULL);
+	clGetDeviceIDs(platformIds[0], CL_DEVICE_TYPE_CPU, deviceIdCount, deviceIds.data(), NULL); 	
+	print_platform_info(platformIds); 
+	print_device_info(deviceIds); 
 }

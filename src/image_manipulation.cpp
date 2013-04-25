@@ -1,5 +1,5 @@
 
-#include "header.h"
+#include "maincontroller.h"
 
 Image LoadImage (const char* path)
 {

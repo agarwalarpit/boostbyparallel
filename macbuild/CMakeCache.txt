@@ -181,6 +181,15 @@ boostbyparallel_BINARY_DIR:STATIC=/Users/arpitagarwal/Desktop/boostbyparallel/ma
 //Value Computed by CMake
 boostbyparallel_SOURCE_DIR:STATIC=/Users/arpitagarwal/Desktop/boostbyparallel/src
 
+//Dependencies for target
+cllibrary_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+gpu_info_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+vecOp_LIB_DEPENDS:STATIC=
+
 
 ########################
 # INTERNAL cache entries

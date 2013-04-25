@@ -59,7 +59,9 @@ CMAKE_BINARY_DIR = /Users/arpitagarwal/Desktop/boostbyparallel/macbuild
 # Target rules for target CMakeFiles/boostbyparallel.dir
 
 # All Build rule for target.
-CMakeFiles/boostbyparallel.dir/all:
+CMakeFiles/boostbyparallel.dir/all: CMakeFiles/cllibrary.dir/all
+CMakeFiles/boostbyparallel.dir/all: CMakeFiles/gpu_info.dir/all
+CMakeFiles/boostbyparallel.dir/all: CMakeFiles/vecOp.dir/all
 	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/depend
 	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles  1
@@ -72,7 +74,7 @@ all: CMakeFiles/boostbyparallel.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/boostbyparallel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/boostbyparallel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 0
 .PHONY : CMakeFiles/boostbyparallel.dir/rule
@@ -88,6 +90,111 @@ CMakeFiles/boostbyparallel.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/boostbyparallel.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cllibrary.dir
+
+# All Build rule for target.
+CMakeFiles/cllibrary.dir/all:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/depend
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles  2
+	@echo "Built target cllibrary"
+.PHONY : CMakeFiles/cllibrary.dir/all
+
+# Include target in all.
+all: CMakeFiles/cllibrary.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cllibrary.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cllibrary.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 0
+.PHONY : CMakeFiles/cllibrary.dir/rule
+
+# Convenience name for target.
+cllibrary: CMakeFiles/cllibrary.dir/rule
+.PHONY : cllibrary
+
+# clean rule for target.
+CMakeFiles/cllibrary.dir/clean:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/clean
+.PHONY : CMakeFiles/cllibrary.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/cllibrary.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/gpu_info.dir
+
+# All Build rule for target.
+CMakeFiles/gpu_info.dir/all:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/depend
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles  3
+	@echo "Built target gpu_info"
+.PHONY : CMakeFiles/gpu_info.dir/all
+
+# Include target in all.
+all: CMakeFiles/gpu_info.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/gpu_info.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gpu_info.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 0
+.PHONY : CMakeFiles/gpu_info.dir/rule
+
+# Convenience name for target.
+gpu_info: CMakeFiles/gpu_info.dir/rule
+.PHONY : gpu_info
+
+# clean rule for target.
+CMakeFiles/gpu_info.dir/clean:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/clean
+.PHONY : CMakeFiles/gpu_info.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/gpu_info.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/vecOp.dir
+
+# All Build rule for target.
+CMakeFiles/vecOp.dir/all:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/depend
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles  4
+	@echo "Built target vecOp"
+.PHONY : CMakeFiles/vecOp.dir/all
+
+# Include target in all.
+all: CMakeFiles/vecOp.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/vecOp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/vecOp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arpitagarwal/Desktop/boostbyparallel/macbuild/CMakeFiles 0
+.PHONY : CMakeFiles/vecOp.dir/rule
+
+# Convenience name for target.
+vecOp: CMakeFiles/vecOp.dir/rule
+.PHONY : vecOp
+
+# clean rule for target.
+CMakeFiles/vecOp.dir/clean:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/clean
+.PHONY : CMakeFiles/vecOp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/vecOp.dir/clean
 .PHONY : clean
 
 #=============================================================================

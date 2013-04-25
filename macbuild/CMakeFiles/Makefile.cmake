@@ -64,4 +64,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/boostbyparallel.dir/DependInfo.cmake"
+  "CMakeFiles/cllibrary.dir/DependInfo.cmake"
+  "CMakeFiles/gpu_info.dir/DependInfo.cmake"
+  "CMakeFiles/vecOp.dir/DependInfo.cmake"
   )

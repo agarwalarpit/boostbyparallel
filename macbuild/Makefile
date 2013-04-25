@@ -114,29 +114,140 @@ boostbyparallel/fast:
 	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/build
 .PHONY : boostbyparallel/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+#=============================================================================
+# Target rules for targets named cllibrary
+
+# Build rule for target.
+cllibrary: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cllibrary
+.PHONY : cllibrary
+
+# fast build rule for target.
+cllibrary/fast:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/build
+.PHONY : cllibrary/fast
+
+#=============================================================================
+# Target rules for targets named gpu_info
+
+# Build rule for target.
+gpu_info: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gpu_info
+.PHONY : gpu_info
+
+# fast build rule for target.
+gpu_info/fast:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/build
+.PHONY : gpu_info/fast
+
+#=============================================================================
+# Target rules for targets named vecOp
+
+# Build rule for target.
+vecOp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vecOp
+.PHONY : vecOp
+
+# fast build rule for target.
+vecOp/fast:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/build
+.PHONY : vecOp/fast
+
+cllibrary.o: cllibrary.cpp.o
+.PHONY : cllibrary.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/main.cpp.o
-.PHONY : main.cpp.o
+cllibrary.cpp.o:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/cllibrary.cpp.o
+.PHONY : cllibrary.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+cllibrary.i: cllibrary.cpp.i
+.PHONY : cllibrary.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/main.cpp.i
-.PHONY : main.cpp.i
+cllibrary.cpp.i:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/cllibrary.cpp.i
+.PHONY : cllibrary.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+cllibrary.s: cllibrary.cpp.s
+.PHONY : cllibrary.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/main.cpp.s
-.PHONY : main.cpp.s
+cllibrary.cpp.s:
+	$(MAKE) -f CMakeFiles/cllibrary.dir/build.make CMakeFiles/cllibrary.dir/cllibrary.cpp.s
+.PHONY : cllibrary.cpp.s
+
+gpu_info.o: gpu_info.cpp.o
+.PHONY : gpu_info.o
+
+# target to build an object file
+gpu_info.cpp.o:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/gpu_info.cpp.o
+.PHONY : gpu_info.cpp.o
+
+gpu_info.i: gpu_info.cpp.i
+.PHONY : gpu_info.i
+
+# target to preprocess a source file
+gpu_info.cpp.i:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/gpu_info.cpp.i
+.PHONY : gpu_info.cpp.i
+
+gpu_info.s: gpu_info.cpp.s
+.PHONY : gpu_info.s
+
+# target to generate assembly for a file
+gpu_info.cpp.s:
+	$(MAKE) -f CMakeFiles/gpu_info.dir/build.make CMakeFiles/gpu_info.dir/gpu_info.cpp.s
+.PHONY : gpu_info.cpp.s
+
+maincontroller.o: maincontroller.cpp.o
+.PHONY : maincontroller.o
+
+# target to build an object file
+maincontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/maincontroller.cpp.o
+.PHONY : maincontroller.cpp.o
+
+maincontroller.i: maincontroller.cpp.i
+.PHONY : maincontroller.i
+
+# target to preprocess a source file
+maincontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/maincontroller.cpp.i
+.PHONY : maincontroller.cpp.i
+
+maincontroller.s: maincontroller.cpp.s
+.PHONY : maincontroller.s
+
+# target to generate assembly for a file
+maincontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/boostbyparallel.dir/build.make CMakeFiles/boostbyparallel.dir/maincontroller.cpp.s
+.PHONY : maincontroller.cpp.s
+
+vecOp.o: vecOp.cpp.o
+.PHONY : vecOp.o
+
+# target to build an object file
+vecOp.cpp.o:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/vecOp.cpp.o
+.PHONY : vecOp.cpp.o
+
+vecOp.i: vecOp.cpp.i
+.PHONY : vecOp.i
+
+# target to preprocess a source file
+vecOp.cpp.i:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/vecOp.cpp.i
+.PHONY : vecOp.cpp.i
+
+vecOp.s: vecOp.cpp.s
+.PHONY : vecOp.s
+
+# target to generate assembly for a file
+vecOp.cpp.s:
+	$(MAKE) -f CMakeFiles/vecOp.dir/build.make CMakeFiles/vecOp.dir/vecOp.cpp.s
+.PHONY : vecOp.cpp.s
 
 # Help Target
 help:
@@ -145,11 +256,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... boostbyparallel"
+	@echo "... cllibrary"
 	@echo "... edit_cache"
+	@echo "... gpu_info"
 	@echo "... rebuild_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... vecOp"
+	@echo "... cllibrary.o"
+	@echo "... cllibrary.i"
+	@echo "... cllibrary.s"
+	@echo "... gpu_info.o"
+	@echo "... gpu_info.i"
+	@echo "... gpu_info.s"
+	@echo "... maincontroller.o"
+	@echo "... maincontroller.i"
+	@echo "... maincontroller.s"
+	@echo "... vecOp.o"
+	@echo "... vecOp.i"
+	@echo "... vecOp.s"
 .PHONY : help
 
 
