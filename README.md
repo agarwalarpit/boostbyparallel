@@ -48,4 +48,10 @@ At the end, average of all elements of vector-c will also be printed out.
 Kernels for the parallelization software are provided in the folder named, *./kernels*. 
 
  
+<h2> Future Implementations </h2> 
+This section will contain the support, I would be adding in the future.
+Like matrix multiplication sample for matrix operations. 
+
+That piece of code would be extended soon. 
+ 
  
