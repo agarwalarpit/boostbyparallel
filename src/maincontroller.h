@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <math.h> 
+#include <algorithm>    // std::for_each
 
 #ifdef __APPLE__
         #include "OpenCL/opencl.h"
