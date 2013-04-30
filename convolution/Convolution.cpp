@@ -165,7 +165,7 @@ int main(int argc, char** argv)
 		&errNum);
 	checkErr(errNum, "clCreateContext");
 
-	std::ifstream srcFile("Convolution.cl");
+	std::ifstream srcFile("../convolution/Convolution.cl");
     checkErr(srcFile.is_open() ? CL_SUCCESS : -1, "reading Convolution.cl");
 
 	std::string srcProg(
