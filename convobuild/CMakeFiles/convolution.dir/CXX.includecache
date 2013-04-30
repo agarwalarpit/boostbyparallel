@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/arpitagarwal/Desktop/boostbyparallel/convolution/OpenCLConvolution/Convolution.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+string
+-
+OpenCL/cl.h
+-
+CL/cl.h
+-
+
