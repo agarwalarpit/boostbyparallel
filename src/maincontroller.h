@@ -15,6 +15,12 @@
         #include "CL/cl.h"
 #endif
 
+#ifdef __APPLE__
+	#define	PLATFORM_NUMBER 0
+#else
+	#define PLATFORM_NUMBER 1
+#endif 
+
 typedef enum {False, True} BOOL; 
 
 struct Image

@@ -9,7 +9,7 @@ using namespace std;
 int main ()
 {
 	CLLibrary *cll_object = new CLLibrary(); 
-	cll_object->createContext(cll_object->platformIds[1]); 
+	cll_object->createContext(cll_object->platformIds[PLATFORM_NUMBER]); 
 	std::cout << "Context created" << std::endl;
 	cll_object->createQueue();
 	

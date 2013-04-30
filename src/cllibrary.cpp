@@ -10,13 +10,13 @@ CLLibrary::CLLibrary() {
 	platformIds = tempPlatformIds; 
 	clGetPlatformIDs(platformIdCount, platformIds.data (), NULL);
 	
-	error = clGetDeviceIDs(platformIds[1], CL_DEVICE_TYPE_GPU, 0, NULL, &deviceIdCount); 
+	error = clGetDeviceIDs(platformIds[PLATFORM_NUMBER], CL_DEVICE_TYPE_GPU, 0, NULL, &deviceIdCount); 
 	CheckError(error, "clGetDeviceIDs: No OpenCL compatible devices found"); 	
 
 	std::vector<cl_device_id> tempDeviceIds (deviceIdCount);
 	deviceIds = tempDeviceIds; 
 	
-	clGetDeviceIDs(platformIds[1], CL_DEVICE_TYPE_GPU, deviceIdCount, deviceIds.data(), NULL); 	
+	clGetDeviceIDs(platformIds[PLATFORM_NUMBER], CL_DEVICE_TYPE_GPU, deviceIdCount, deviceIds.data(), NULL); 	
 	print_platform_info(platformIds); 
 	print_device_info(deviceIds); 
 }
