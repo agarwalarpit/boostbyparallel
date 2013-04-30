@@ -1,1 +1,0 @@
-/usr/bin/c++   -g -Wall -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/convolution.dir/Convolution.cpp.o  -o convolution  -framework OpenCL 
