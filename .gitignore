@@ -20,3 +20,6 @@ build*
 *build/
 # Swap files because of vim
 *.swp
+
+# Svn folders, because of some randome code. 
+.svn/
