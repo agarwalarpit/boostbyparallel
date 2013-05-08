@@ -21,5 +21,9 @@ build*
 # Swap files because of vim
 *.swp
 
-# Svn folders, because of some randome code. 
+# Svn folders, because of some random code. 
 .svn/
+
+# Operating system files/folders. 
+.DS_Store/
+
