@@ -13,7 +13,12 @@ void vecAdd(  __global int *a, __global int *b, __global int *c, const unsigned 
     //Get our global thread ID                                  
     const unsigned int id = get_global_id(0);                                  
 
-    //Make sure we do not go out of bounds
+	int nX = (int) id/640; 
+	int nY = id % 640; 
+
+
+
+	//Make sure we do not go out of bounds
     if (id < n) {
 		c[id] = a[id] + b[id]; // operator(a[id], b[id]);
 	}                                
